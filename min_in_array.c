@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main(int argc, char const *argv[])
+int main()
 {
     int n;
     scanf("%d", &n);
@@ -20,7 +20,5 @@ int main(int argc, char const *argv[])
         
     }
     printf("Le minimum est : %d", min);
-    
-    
     return 0;
 }
