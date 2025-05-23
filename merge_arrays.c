@@ -9,7 +9,6 @@ int main()
     for (int i = 0; i < n; i++)
     {
         scanf("%d", &tab1[i]);
-        // count1[i] = tab1[i];
     }
     int m;
     scanf("%d", &m);
@@ -17,7 +16,6 @@ int main()
     for (int i = 0; i < m; i++)
     {
         scanf("%d", &tab2[i]);
-        // count2[i] = tab2[i]
     }
     printf("Tableau fusionné : ");
     for (int i = 0; i < n; i++)
