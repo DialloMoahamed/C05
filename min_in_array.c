@@ -5,12 +5,6 @@ int main()
     int n;
     scanf("%d", &n);
 
-    if (n <= 0)
-    {
-        printf("Erreur : la taille du tableau doit être positive.\n");
-        return 1;
-    }
-
     int tab[n];
     for (int i = 0; i < n; i++)
     {
@@ -26,6 +20,6 @@ int main()
         }
     }
 
-    printf("Le minimum est : %d\n", min);
+    printf("Le minimum est : %d", min);
     return 0;
 }
