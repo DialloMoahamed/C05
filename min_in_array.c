@@ -5,12 +5,10 @@ int main()
     int n;
     scanf("%d", &n);
     int tab[n];
-    
     for (int i = 0; i < n; i++)
     {
         scanf("%d", &tab[i]);
     }
-
     int min = tab[0];
     for (int i = 1; i < n; i++)
     {
@@ -19,7 +17,6 @@ int main()
             min = tab[i];
         }
     }
-
     printf("Le minimum est : %d\n", min);
     return 0;
 }
