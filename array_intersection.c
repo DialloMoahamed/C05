@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main(void)
+int main(int argc, char const *argv[])
 {
     int n;
     scanf("%d", &n);
@@ -8,6 +8,7 @@ int main(void)
     for (int i = 0; i < n; i++)
     {
         scanf("%d", &tab1[i]);
+
     }
     int m;
     scanf("%d", &m);
@@ -15,6 +16,7 @@ int main(void)
     for (int i = 0; i < m; i++)
     {
         scanf("%d", &tab2[i]);
+
     }
     printf("Intersection : ");
     for (int i = 0; i < n; i++)
