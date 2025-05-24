@@ -4,8 +4,8 @@ int main()
 {
     int n;
     scanf("%d", &n);
-
     int tab[n];
+    
     for (int i = 0; i < n; i++)
     {
         scanf("%d", &tab[i]);
@@ -20,6 +20,6 @@ int main()
         }
     }
 
-    printf("Le minimum est : %d", min);
+    printf("Le minimum est : %d\n", min);
     return 0;
 }
