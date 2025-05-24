@@ -8,16 +8,13 @@ int main()
     for (int i = 0; i < n; i++) {
         scanf("%d", &tab1[i]);
     }
-
     int m;
     scanf("%d", &m);
     int tab2[m];
     for (int i = 0; i < m; i++) {
         scanf("%d", &tab2[i]);
     }
-
     printf("Intersection :");
-
     for (int i = 0; i < n; i++) {
         int comin = 0;
         for (int j = 0; j < m; j++) {
@@ -26,7 +23,6 @@ int main()
                 break;
             }
         }
-
         if (comin) {
             int dejaAfficher = 0;
             for (int k = 0; k < i; k++) {
@@ -40,7 +36,6 @@ int main()
             }
         }
     }
-
     printf("\n");
     return 0;
 }
