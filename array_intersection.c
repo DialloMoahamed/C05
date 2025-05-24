@@ -1,17 +1,6 @@
 #include <stdio.h>
-#include <stdbool.h>
 
-bool deja_affiche(int tab[], int taille, int valeur) {
-    for (int i = 0; i < taille; i++) {
-        if (tab[i] == valeur) {
-            return true;
-        }
-    }
-    return false;
-}
-
-int main()
-{
+int main() {
     int n;
     scanf("%d", &n);
     int tab1[n];
@@ -26,24 +15,37 @@ int main()
         scanf("%d", &tab2[i]);
     }
 
-    int inter[n < m ? n : m]; // tableau pour stocker les éléments communs sans doublons
+    int inter[n < m ? n : m];
     int taille_inter = 0;
 
     printf("Intersection :");
+
     for (int i = 0; i < n; i++) {
-        // On vérifie si on a déjà affiché tab1[i]
-        if (deja_affiche(inter, taille_inter, tab1[i])) {
-            continue; // on passe au suivant si déjà affiché
+        // Vérifier si tab1[i] a déjà été affiché (dans inter)
+        int deja_affiche = 0;
+        for (int k = 0; k < taille_inter; k++) {
+            if (inter[k] == tab1[i]) {
+                deja_affiche = 1;
+                break;
+            }
         }
+        if (deja_affiche) {
+            continue; // on ignore cet élément car déjà affiché
+        }
+
+        // Chercher tab1[i] dans tab2
         for (int j = 0; j < m; j++) {
             if (tab1[i] == tab2[j]) {
+                // On affiche et on stocke pour ne pas répéter
                 printf(" %d", tab1[i]);
-                inter[taille_inter++] = tab1[i];  // on garde en mémoire l'affichage pour éviter doublons
-                tab2[j] = -99999; // marquer comme utilisé dans tab2
+                inter[taille_inter++] = tab1[i];
+                // Marquer tab2[j] comme utilisé
+                tab2[j] = -99999;
                 break;
             }
         }
     }
+
     printf("\n");
 
     return 0;
