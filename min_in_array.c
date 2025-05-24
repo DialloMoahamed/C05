@@ -1,11 +1,15 @@
 #include <stdio.h>
+#define MAX 1000
 
 int main()
 {
     int n;
     scanf("%d", &n);
 
-    int tab[n];
+    if (n > MAX || n <= 0)
+        return 1;
+
+    int tab[MAX];
     for (int i = 0; i < n; i++)
     {
         scanf("%d", &tab[i]);
