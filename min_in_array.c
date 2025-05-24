@@ -21,6 +21,6 @@ int main()
         }
     }
 
-    printf("Le minimum est : %d\n", min);
+    printf("Le minimum est : %d", min);
     return 0;
 }
