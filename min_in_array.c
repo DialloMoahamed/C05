@@ -1,29 +1,40 @@
 #include <stdio.h>
-#define MAX 1000
+#include <stdlib.h>
 
-int main()
-{
-    int n;
-    scanf("%d", &n);
-
-    if (n > MAX || n <= 0)
+int main() {
+    int n, i;
+    if (scanf("%d", &n) != 1 || n <= 0) {
+        printf("Taille du tableau invalide.\n");
         return 1;
-
-    int tab[MAX];
-    for (int i = 0; i < n; i++)
-    {
-        scanf("%d", &tab[i]);
     }
 
-    int min = tab[0];
-    for (int i = 1; i < n; i++)
-    {
-        if (tab[i] < min)
-        {
-            min = tab[i];
+    int *tableau = (int *)malloc(n * sizeof(int));
+    if (tableau == NULL) {
+        printf("Erreur d'allocation mémoire.\n");
+        return 1;
+    }
+
+    printf("Entrez les éléments du tableau : ");
+    for (i = 0; i < n; i++) {
+        if (scanf("%d", &tableau[i]) != 1) {
+            printf("Erreur lors de la lecture des éléments.\n");
+            free(tableau);
+            return 1;
         }
     }
 
-    printf("Le minimum est : %d\n", min);
+    if (n == 0) {
+        printf("Le tableau est vide.\n");
+    } else {
+        int min = tableau[0];
+        for (i = 1; i < n; i++) {
+            if (tableau[i] < min) {
+                min = tableau[i];
+            }
+        }
+        printf("Le minimum est : %d\n", min);
+    }
+
+    free(tableau);
     return 0;
 }
