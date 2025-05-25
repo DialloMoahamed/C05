@@ -1,43 +1,36 @@
 #include <stdio.h>
 
+int N1, N2, n[100];
+
 int main()
 {
-    int n;
-    scanf("%d", &n);
-    int tab1[n];
-    for (int i = 0; i < n; i++) {
-        scanf("%d", &tab1[i]);
-    }
+    int i, x;
 
-    int m;
-    scanf("%d", &m);
-    int tab2[m];
-    for (int i = 0; i < m; i++) {
-        scanf("%d", &tab2[i]);
-    }
+    scanf("%d", &N1);
+
+    for (i = 0; i< N1; i++)
+        {
+            scanf("%d", &x);
+
+            n[x] = 1;
+        }
+
+    scanf("%d", &N2);
+
+    for (i = 0; i< N2; i++)
+        {
+            scanf("%d", &x);
+
+            n[x] |= 2;
+        }
 
     printf("Intersection : ");
-    for (int i = 0; i < n; i++) {
-        int commun = 0;
-        for (int j = 0; j < m; j++) {
-            if (tab1[i] == tab2[j]) {
-                commun = 1; 
-                break;
-            }
-        }
-        if (commun) {
-            int dejaAffiche = 0;
-            for (int k = 0; k < i; k++) {
-                if (tab1[k] == tab1[i]) {
-                    dejaAffiche = 1;
-                    break;
-                }
-            }
-            if (!dejaAffiche) {
-                printf("%d ", tab1[i]);
-            }
-        }
+
+    for (i = 0; i<= 100; i++)
+    {
+        if (n[i] == 3)
+        printf("%d ", i);
     }
-    printf("\n");
+
     return 0;
 }
