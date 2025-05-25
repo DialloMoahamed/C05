@@ -1,33 +1,32 @@
 #include <stdio.h>
 #include <stdbool.h>
 
+#define MAX 1000
+
 int main() {
     int compt1, compt2;
+    int tableau1[MAX], tableau2[MAX];
+    bool deja_affiche[2001] = {false}; 
 
-    // Lecture du premier tableau
     scanf("%d", &compt1);
-    int tableau1[compt1];
     for (int i = 0; i < compt1; i++) {
         scanf("%d", &tableau1[i]);
     }
 
-    // Lecture du deuxième tableau
     scanf("%d", &compt2);
-    int tableau2[compt2];
     for (int i = 0; i < compt2; i++) {
         scanf("%d", &tableau2[i]);
     }
 
-    // Initialisation du tableau de doublons
-    bool deja_affiche[1001] = {false};
-
-    // Recherche et affichage de l'intersection
-    printf("Intersection : ");
+    printf("Intersection :");
     for (int i = 0; i < compt1; i++) {
         for (int j = 0; j < compt2; j++) {
-            if (tableau1[i] == tableau2[j] && !deja_affiche[tableau1[i]]) {
-                printf("%d ", tableau1[i]);
-                deja_affiche[tableau1[i]] = true;
+            if (tableau1[i] == tableau2[j]) {
+                int val = tableau1[i] + 1000;
+                if (!deja_affiche[val]) {
+                    printf(" %d", tableau1[i]);
+                    deja_affiche[val] = true;
+                }
                 break;
             }
         }
