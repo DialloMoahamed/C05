@@ -21,7 +21,7 @@ int main()
         int commun = 0;
         for (int j = 0; j < m; j++) {
             if (tab1[i] == tab2[j]) {
-                commun = 1;
+                commun = 1; 
                 break;
             }
         }
