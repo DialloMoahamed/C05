@@ -15,17 +15,33 @@ int main()
     {
         scanf("%d", &tab2[i]);
     }
-    printf("Intersection:");
+    printf("Intersection :");
     for (int i = 0; i < n1; i++)
     {
+        int presentDanstab2 = 0;
         for (int j = 0; j < n2; j++)
         {
             if (tab1[i] == tab2[j])
             {
-                printf(" %d", tab1[i]);
+                presentDanstab2 = 1;
+                break;
             }
         }
+        int déjà_affiché = 0;
+        for (int k = 0; k < i; k++)
+        {
+            if (tab1[i] == tab1[k])
+            {
+                déjà_affiché = 1;
+                break;
+            }
+        }
+        if (presentDanstab2 && !déjà_affiché)
+        {
+            printf(" %d", tab1[i]);
+        }
     }
+    
     printf("\n");
     return 0;
 }
