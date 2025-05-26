@@ -22,7 +22,7 @@ int main()
         {
             if (tab1[i] == tab2[j])
             {
-                printf("%d", tab1[i]);
+                printf("%d ", tab1[i]);
             }
         }
     }
