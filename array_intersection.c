@@ -30,7 +30,7 @@ int main()
     }
 
     // Affichage du titre (respecter la majuscule et l’espace)
-    printf("Intersection :");
+    printf("intersection :");
 
     // Parcourir le premier tableau
     for (int i = 0; i < n1; i++)
