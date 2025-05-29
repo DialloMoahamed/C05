@@ -30,7 +30,7 @@ int main(void)
     }
 
     // Affichage du titre (respecter la majuscule et l’espace)
-    printf("Intersection :");
+    printf("Intersection : ");
 
     // Parcourir le premier tableau
     for (int i = 0; i < n1; i++)
@@ -61,7 +61,7 @@ int main(void)
         // Si c’est dans tab2 et pas encore affiché, on l’affiche
         if (est_dans_tab2 && !deja_affiche)
         {
-            printf(" %d", tab1[i]);
+            printf("%d ", tab1[i]);
         }
     }
 
