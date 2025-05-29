@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main()
+int main(void)
 {
     int n1, n2;
 
@@ -30,7 +30,7 @@ int main()
     }
 
     // Affichage du titre (respecter la majuscule et l’espace)
-    printf("intersection :");
+    printf("Intersection :");
 
     // Parcourir le premier tableau
     for (int i = 0; i < n1; i++)
