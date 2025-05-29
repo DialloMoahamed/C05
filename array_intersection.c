@@ -16,7 +16,7 @@ int main()
         scanf("%d", &tab2[i]);
     }
     int a_trouve = 0; // Pour savoir si on a trouvé au moins une intersection
-    printf("Intersection :");
+    printf("Intersections :");
     for (int i = 0; i < n1; i++)
     {
         int presentDanstab2 = 0;
